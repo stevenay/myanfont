@@ -290,4 +290,4 @@ whitespace + '(\u103b|\u1031|[\u107e-\u1084])[\u1000-\u1021]
 - [@saturngod's](https://github.com/saturngod) [Rabbit](https://github.com/Rabbit-Converter/Rabbit-PHP) Converter
 
 ## License
-MIT
+[MIT](./LICENSE)
