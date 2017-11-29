@@ -4,7 +4,7 @@ $autoload = __DIR__.'/vendor/autoload.php';
 
 if ( ! file_exists($autoload))
 {
-	exit("Need to run \"composer install\"!");
+	exit("Need Composer!");
 }
 
 require $autoload;
@@ -17,10 +17,14 @@ $unicode_string_2 = "ဇော်ဂျီကနေ ယူနီကုဒ် ၊
 
 // echo "မင်္ဂလာပါ " . MyanFont::fontDetect("မင်္ဂလာပါ");
 // echo "<br />";
-echo "Rabbit ကြန္ဗက္တာကို သိလား " . MyanFont::fontDetect('Rabbit ကွန်ဗက်တာကို သိလား');
+echo "ျမန္မာလိုေျပာမယ္လကြာ" . MyanFont::fontDetect('ျမန္မာလိုေျပာမယ္လကြာ');
+echo "<br />";
+echo "မြန်မာလိုပြောမယ်လကွာ" . MyanFont::fontDetect('မြန်မာလိုပြောမယ်လကွာ');
 echo "<br />";
 
-echo MyanFont::isMyanmarSar("မြန်မာစာ") ? 'true' : 'false';
+echo MyanFont::isMyanmarSar("မြန်မာစာ") ? 'true' : 'false'; // true
+echo MyanFont::isMyanmarSar("English") ? 'true' : 'false'; // false
 echo "<br />";
 
-echo MyanFont::uni2zg("av");
+echo MyanFont::uni2zg("ယူနီကုဒ် ကနေ ဇော်ဂျီ");
+echo MyanFont::zg2uni("ေဇာ္ဂ်ီ ကေန ယူနီကုဒ္");
