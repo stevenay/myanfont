@@ -1,8 +1,8 @@
 <?php 
 
-namespace MyanFont;
+namespace SteveNay\MyanFont;
 
-use MyanFont\RuleBase;
+use SteveNay\MyanFont\RuleBase;
 
 /**
  * Detects Zawgyi or Unicode from String.

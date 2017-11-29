@@ -20,9 +20,9 @@ class ComposerStaticInit5361ff1278058bdb15586ba44d315c5a
         array (
             'Webmozart\\Assert\\' => 17,
         ),
-        'M' => 
+        'S' => 
         array (
-            'MyanFont\\' => 9,
+            'SteveNay\\MyanFont\\' => 18,
         ),
         'D' => 
         array (
@@ -42,7 +42,7 @@ class ComposerStaticInit5361ff1278058bdb15586ba44d315c5a
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
-        'MyanFont\\' => 
+        'SteveNay\\MyanFont\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

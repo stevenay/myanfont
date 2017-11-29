@@ -1,9 +1,10 @@
 {
-    "name": "stevenay/myanfont",
-    "description": "Zawgyi vs Unicode Detector",
+    "name": "steveNay/myanfont",
+    "description": "Zawgyi and Unicode Font Detector and Converter",
     "license": "MIT",
     "keywords": [
         "detector",
+        "converter",
         "zawgyi",
         "unicode",
         "myanmar-font"
@@ -15,15 +16,17 @@
             "email": "stevenaylinaung@gmail.com"
         }
     ],
+    "type": "project",
+    "require": {
+        "php": ">=7.0",
+        "rabbit-converter/rabbit-php": "dev-master"
+    },
     "require-dev": {
         "phpunit/phpunit": "6.4"
     },
     "autoload": {
         "psr-4": {
-            "MyanFont\\": "src"
+            "SteveNay\\MyanFont\\": "src/"
         }
-    },
-    "require": {
-        "rabbit-converter/rabbit-php": "dev-master"
     }
 }

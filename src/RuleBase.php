@@ -1,6 +1,6 @@
 <?php 
 
-namespace MyanFont;
+namespace SteveNay\MyanFont;
 
 /**
  * Regular Expression Collection Base Class for 

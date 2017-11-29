@@ -2,9 +2,9 @@
 namespace tests\units;
 
 use PHPUnit\Framework\TestCase;
-use MyanFont\MyanFont;
+use SteveNay\MyanFont\MyanFont;
 
-class MyanFontTest extends TestCase
+class MyanmarSarTest extends TestCase
 {
     private $sampleData = array();
 
@@ -16,24 +16,6 @@ class MyanFontTest extends TestCase
     public function tearDown()
     {
         $this->sampleData = array();
-    }
-
-    /** @test */
-    function detect_zawgyi_font()
-    {
-        // check zawgyi return
-        foreach ($this->sampleData['zawgyi'] as $key => $zawgyi) {
-            $this->assertSame('zawgyi', MyanFont::fontDetect($zawgyi), "Unexpected: " . $zawgyi);
-        }
-    }
-
-    /** @test */
-    function detect_unicode_font()
-    {
-        // check unicode return
-        foreach ($this->sampleData['unicode'] as $key => $unicode) {
-            $this->assertSame('unicode', MyanFont::fontDetect($unicode), "Unexpected: " . $unicode);
-        }
     }
 
     /** @test */
@@ -87,21 +69,4 @@ class MyanFontTest extends TestCase
         $this->assertFalse(MyanFont::isValidMyanmarSar(null), "String must be passed to validMyanmarSar function.");
     }
 
-    /** @test */
-    function convert_zawgyi_to_unicode()
-    {
-        foreach ($this->sampleData['zawgyi'] as $key => $zawgyi) {
-            $unicode = $this->sampleData['unicode'][$key];
-            $this->assertSame($unicode, MyanFont::zg2uni($zawgyi));
-        }
-    }
-
-    /** @test */
-    function convert_unicode_to_zawgyi()
-    {
-        foreach ($this->sampleData['unicode'] as $key => $unicode) {
-            $zawgyi = $this->sampleData['zawgyi'][$key];
-            $this->assertSame($zawgyi, MyanFont::uni2zg($unicode));
-        }
-    }
 }
