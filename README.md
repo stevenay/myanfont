@@ -280,14 +280,14 @@ whitespace + '(\u103b|\u1031|[\u107e-\u1084])[\u1000-\u1021]
 - Have no idea.
 
 ## Todo
-- [] To complete documentation of 'Have no idea' regular expression
+- To complete documentation of 'Have no idea' regular expression
 - Contribution Guide
 - Version Release Note
 
 ## Credit
 
 -  Ko [ThuraMyoNyunt](https://github.com/greenlikeorange) [Kyani](https://github.com/greenlikeorange/knayi-myscript) Javascript library.
-- [@saturngod's](https://github.com/saturngod) [Rabbit](https://github.com/Rabbit-Converter/Rabbit-PHP) Converter
+- Ko [@saturngod's](https://github.com/saturngod) [Rabbit](https://github.com/Rabbit-Converter/Rabbit-PHP) Converter
 
 ## License
 [MIT](./LICENSE)
