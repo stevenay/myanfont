@@ -51,7 +51,7 @@ I also have a strong desire to write proper documentation for each **regular exp
 
 
 ## Implementation
-This library source code is primarily referenced from Ko [ThuraMyoNyunt](https://github.com/greenlikeorange) [Kyani](https://github.com/greenlikeorange/knayi-myscript) Javascript library. I have to admit that [Kyani](https://github.com/greenlikeorange/knayi-myscript) is **awesome**. 
+This library source code is primarily referenced from Ko [ThuraMyoNyunt](https://github.com/greenlikeorange) [Knayi](https://github.com/greenlikeorange/knayi-myscript) Javascript library. I have to admit that [Knayi](https://github.com/greenlikeorange/knayi-myscript) is **awesome**. 
 
 ### Regular Expression for Detection
 I found out popular **regular expression** to detect zawgyi/unicode which is as below, 
@@ -63,7 +63,7 @@ var regexZG = new RegExp("\s\u1031| ေ[က-အ]်|[က-အ]း");
 
 The above regular expression is used in Ko [SaturnGod](https://github.com/saturngod/) [Tagu](https://github.com/saturngod/Tagu-firefox) browser addons. Accord to this [conversation](https://github.com/Rabbit-Converter/Rabbit/issues/10), the origin developer of this regexp is Ko [Ravi](https://github.com/ravichhabra). Then it is modified by Ko [Thant Thet](https://github.com/thantthet).
 
-On top of that, the regular expression used in Ko [ThuraMyoNyunt](https://github.com/greenlikeorange) [Kyani](https://github.com/greenlikeorange/knayi-myscript) Library is also very good but I added some necessary regular expressions from Ko [Ravi](https://github.com/ravichhabra)'s code.
+On top of that, the regular expression used in Ko [ThuraMyoNyunt](https://github.com/greenlikeorange) [Knayi](https://github.com/greenlikeorange/knayi-myscript) Library is also very good but I added some necessary regular expressions from Ko [Ravi](https://github.com/ravichhabra)'s code.
 
 Here is the complete **RegExps** used in this library.
 
@@ -286,7 +286,7 @@ whitespace + '(\u103b|\u1031|[\u107e-\u1084])[\u1000-\u1021]
 
 ## Credit
 
--  Ko [ThuraMyoNyunt](https://github.com/greenlikeorange) [Kyani](https://github.com/greenlikeorange/knayi-myscript) Javascript library.
+-  Ko [ThuraMyoNyunt](https://github.com/greenlikeorange) [Knayi](https://github.com/greenlikeorange/knayi-myscript) Javascript library.
 - Ko [@saturngod's](https://github.com/saturngod) [Rabbit](https://github.com/Rabbit-Converter/Rabbit-PHP) Converter
 
 ## License
