@@ -8,7 +8,7 @@ class ComposerStaticInit5361ff1278058bdb15586ba44d315c5a
 {
     public static $files = array (
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        'b8b0e6ebdde0fd41337c41b08589cda3' => __DIR__ . '/..' . '/rabbit-converter/rabbit-php/src/Rabbit.php',
+        '6cda6f9141f19ef67a795858527a6e72' => __DIR__ . '/../..' . '/src/Rabbit.php',
     );
 
     public static $prefixLengthsPsr4 = array (
