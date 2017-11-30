@@ -16,7 +16,7 @@
             "email": "stevenaylinaung@gmail.com"
         }
     ],
-    "type": "project",
+    "type": "library",
     "require": {
         "php": ">=7.0",
         "rabbit-converter/rabbit-php": "dev-master"
