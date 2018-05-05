@@ -40,6 +40,81 @@ echo MyanFont::uni2zg("ယူနီကုဒ် ကနေ ဇော်ဂျီ"
 echo MyanFont::zg2uni("ေဇာ္ဂ်ီ ကေန ယူနီကုဒ္");
 ```
 
+## Usage for Laravel Projects
+In these days, a lot of Php projects are developed with Laravel Framework including me. Therefore, the following is the recommended way to use this library in Laravel projects;
+
+### To use in Controllers and any Php classes:
+Just import the class and call the static methods from the class like accessing Utility methods.
+
+```
+use SteveNay\MyanFont\MyanFont;
+
+class LanguageController extends Controller  
+{
+	public function controllerMethod(String $message)  
+	{  
+		// ...
+		$lan = MyanFont::fontDetect($message);  
+		
+		// ... any code
+	}
+}
+```
+
+### To use as Global Helper Functions:
+There may be the cases that you want to use as clean helper functions (for example., in your blade views).
+
+In this case, I recommend to create **helpers.php** file in your **app** folder (folder structure is your preference). For example: `app\Helpers\helpers.php`
+
+Then add "**helpers.php**" file to your **composer.json** file to autoload:
+```
+"autoload": {
+    "classmap": [
+        "database"
+    ],
+    "psr-4": {
+        "App\\": "app/"
+    },
+    "files": ["app/Helpers/helpers.php"] // <- add this line
+},
+```
+Then run the commend:
+```
+composer dump-autoload
+```
+Finally in your **app/Helpers/helpers.php** file, put the following code to call the functions globally.
+```
+if (! function_exists('fontDetect')) {  
+	function fontDetect(string $content, $default = "zawgyi")  
+	{
+		return SteveNay\MyanFont\MyanFont::fontDetect($content, $default);  
+	}
+}  
+  
+if (! function_exists('isMyanmarSar')) {  
+	function isMyanmarSar(string $content)  
+	{
+		return SteveNay\MyanFont\MyanFont::isMyanmarSar($content);  
+	}
+}  
+  
+if (! function_exists('uni2zg')) {  
+	function uni2zg(string $content)  
+	{
+		return SteveNay\MyanFont\MyanFont::uni2zg($content);  
+	}
+}  
+  
+if (! function_exists('zg2uni')) {  
+	function zg2uni(string $content)  
+	{
+		return SteveNay\MyanFont\MyanFont::zg2uni($content);  
+	}
+}
+```
+Then, you can use like
+
+``` {{ fontDetect("ကျွန်တော် မြန်မာတစ်ယောက်ပါ။") }} ```
 
 ## Why this Library
 At the time of this library implementation, I've not found proper **Php** library for zawgyi/unicode font detection. Currently I'm developing Messenger Chatbot where users can also talk with Bot in Burmese.
