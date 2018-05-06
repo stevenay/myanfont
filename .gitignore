@@ -2,3 +2,6 @@
 composer.lock
 sample.php
 detect.js
+
+#IDE metadata
+**.idea/**
