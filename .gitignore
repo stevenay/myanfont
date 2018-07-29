@@ -5,3 +5,4 @@ detect.js
 
 #IDE metadata
 **.idea/**
+.idea/

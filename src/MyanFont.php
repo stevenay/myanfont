@@ -3,11 +3,11 @@
 namespace SteveNay\MyanFont;
 
 use SteveNay\MyanFont\RuleBase;
-
+use Googlei18n\MyanmarTools\ZawgyiDetector;
 /**
  * Detects Zawgyi or Unicode from String.
  * Can also test the input String is valid Myanmar Sar.
- * Zawgyi <=> Unicode converter also supported by wrapping Rabbit Converter.
+ * Zawgyi <=> Unicode converter also supported by wrapping RabbitOld Converter.
  * 
  * This code is partially referenced from awesome 
  * https://github.com/greenlikeorange/knayi-myscript
@@ -44,7 +44,7 @@ class MyanFont
         $unicode = $zawgyi = 0;
 
         foreach (RuleBase::$ruleSet as $fontRule => $ruleSet) {
-            $ $fontRule = 0;
+            $$fontRule = 0;
 
             foreach ($ruleSet as $key => $rule) {
 
@@ -54,7 +54,7 @@ class MyanFont
 
                 $rule = self::prepareValidRegExp($rule);
                 $matchCount = preg_match($rule, $content);
-                $ $fontRule += $matchCount;
+                $$fontRule += $matchCount;
             }
         }
 
@@ -63,7 +63,34 @@ class MyanFont
         } else if ($unicode < $zawgyi) {
             return 'zawgyi';
         } else {
-            // default zawgyi return
+            // default return
+            return $default;
+        }
+    }
+
+    /**
+     * @param string $content
+     * @param string $default
+     * @return string
+     * @throws \Exception
+     *
+     * read detail documentation -> https://github.com/googlei18n/myanmar-tools/blob/master/clients/php/README.md
+     * https://github.com/googlei18n/myanmar-tools
+     */
+    public static function fontDetectByMachineLearning(string $content, $default = 'unicode')
+    {
+        $detector = new ZawgyiDetector();
+        $score = $detector->getZawgyiProbability($content);
+
+        // not include myanmar character in string
+        if ($score === INF)
+            return $default;
+
+        if ($score >= 0.95) {
+            return 'zawgyi';
+        } else if ($score <= 0.05) {
+            return 'unicode';
+        } else {
             return $default;
         }
     }
@@ -83,7 +110,7 @@ class MyanFont
         return self::isMyanmarSar($content);
     }
 
-    // wrapper around Rabbit Converter
+    // wrapper around RabbitOld Converter
     public static function __callStatic($method, $arguments)
     {
         if (method_exists('Rabbit', $method)) {

@@ -4,7 +4,8 @@
 
 ## Features
   - Myanmar Sar Checker
-  - Zawgyi/Unicode Font Detector
+  - Zawgyi/Unicode Encoding Detector (using Regular Expression)
+  - Zawgyi/Unicode Encoding Detector (using Machine Learning based Markov Model)
   - Zawgyi <=> Unicode Converter
 
 As a **notice**, it cannot get 100% correction in detecting zawgyi or unicode just by checking to the text.
@@ -32,6 +33,9 @@ use SteveNay\MyanFont\MyanFont;
 
 echo MyanFont::fontDetect('ျမန္မာလိုေျပာမယ္လကြာ'); // Zawgyi
 echo MyanFont::fontDetect('မြန်မာလိုပြောမယ်လကွာ'); // Unicode
+
+echo MyanFont::fontDetectByMachineLearning('ျမန္မာလိုေျပာမယ္လကြာ'); // Zawgyi
+echo MyanFont::fontDetectByMachineLearning('မြန်မာလိုပြောမယ်လကွာ'); // Unicode
 
 echo MyanFont::isMyanmarSar("မြန်မာစာ") ? 'true' : 'false'; // true
 echo MyanFont::isMyanmarSar("English") ? 'true' : 'false'; // false
@@ -127,6 +131,11 @@ I also have a strong desire to write proper documentation for each **regular exp
 
 ## Implementation
 This library source code is primarily referenced from Ko [ThuraMyoNyunt](https://github.com/greenlikeorange) [Knayi](https://github.com/greenlikeorange/knayi-myscript) Javascript library. I have to admit that [Knayi](https://github.com/greenlikeorange/knayi-myscript) is **awesome**. 
+
+### Machine Learning
+For the machine learning version, I've used official Google Myanmar Tools which is also contributed by me. 
+
+In this approach, we can detect the encoding correctly even with the short length of text.
 
 ### Regular Expression for Detection
 I found out popular **regular expression** to detect zawgyi/unicode which is as below, 
