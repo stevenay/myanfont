@@ -28,6 +28,6 @@
         "psr-4": {
             "SteveNay\\MyanFont\\": "src/"
         },
-        "files": ["./src/Rabbit.php"]
+        "files": ["./src/MyanRabbit.php"]
     }
 }

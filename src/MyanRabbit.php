@@ -4,8 +4,10 @@
  * Rabbit is Another Zawgyi <=> Unicode Converter.
  * 
  * @author Saturngod <me@saturngod.net>
+ * Remark: Change classname to be afraid of clash of same classname
+ * where people also install RabbitConverter
  */
-class Rabbit
+class MyanRabbit
 {
     /**
      * Rabbit Converter version.

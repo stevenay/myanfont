@@ -113,8 +113,8 @@ class MyanFont
     // wrapper around RabbitOld Converter
     public static function __callStatic($method, $arguments)
     {
-        if (method_exists('Rabbit', $method)) {
-            $output = call_user_func('Rabbit::' . $method, $arguments);
+        if (method_exists('MyanRabbit', $method)) {
+            $output = call_user_func('MyanRabbit::' . $method, $arguments);
             if (!empty($output)) {
                 return $output[0];
             } else {
