@@ -16,7 +16,7 @@ But it will be correct like 80% in most cases. For longer text, it is safe enoug
 Install using composer:
 
 ```
-composer require "stevenay/myanfont:dev-master"
+composer require "stevenay/myanfont"
 ```
 
 ## Usage
