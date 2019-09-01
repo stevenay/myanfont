@@ -31,11 +31,13 @@ require $autoload;
 
 use SteveNay\MyanFont\MyanFont;
 
+// Machine Learning Approach
 echo MyanFont::fontDetect('ျမန္မာလိုေျပာမယ္လကြာ'); // Zawgyi
 echo MyanFont::fontDetect('မြန်မာလိုပြောမယ်လကွာ'); // Unicode
 
-echo MyanFont::fontDetectByMachineLearning('ျမန္မာလိုေျပာမယ္လကြာ'); // Zawgyi
-echo MyanFont::fontDetectByMachineLearning('မြန်မာလိုပြောမယ်လကွာ'); // Unicode
+// Regular Expression Approach
+echo MyanFont::fontDetectByRegularExpression('ျမန္မာလိုေျပာမယ္လကြာ'); // Zawgyi
+echo MyanFont::fontDetectByRegularExpression('မြန်မာလိုပြောမယ်လကွာ'); // Unicode
 
 echo MyanFont::isMyanmarSar("မြန်မာစာ") ? 'true' : 'false'; // true
 echo MyanFont::isMyanmarSar("English") ? 'true' : 'false'; // false
