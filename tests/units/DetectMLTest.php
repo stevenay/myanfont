@@ -22,7 +22,7 @@ class DetectMLTest extends TestCase
     {
         // check zawgyi return
         foreach ($this->sampleData['zawgyi'] as $key => $zawgyi) {
-            $this->assertSame('zawgyi', MyanFont::fontDetectByMachineLearning($zawgyi), "Unexpected: " . $zawgyi);
+            $this->assertSame('zawgyi', MyanFont::fontDetect($zawgyi), "Unexpected: " . $zawgyi);
         }
     }
 
@@ -31,7 +31,7 @@ class DetectMLTest extends TestCase
     {
         // check unicode return
         foreach ($this->sampleData['unicode'] as $key => $unicode) {
-            $this->assertSame('unicode', MyanFont::fontDetectByMachineLearning($unicode), "Unexpected: " . $unicode);
+            $this->assertSame('unicode', MyanFont::fontDetect($unicode), "Unexpected: " . $unicode);
         }
     }
 }

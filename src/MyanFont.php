@@ -32,7 +32,7 @@ class MyanFont
         return $pattern;
     }
 
-    public static function fontDetect(string $content, $default = 'zawgyi')
+    public static function fontDetectByRegularExpression(string $content, $default = 'zawgyi')
     {
         if (!self::isValidMyanmarSar($content))
             return '';
@@ -77,7 +77,7 @@ class MyanFont
      * read detail documentation -> https://github.com/googlei18n/myanmar-tools/blob/master/clients/php/README.md
      * https://github.com/googlei18n/myanmar-tools
      */
-    public static function fontDetectByMachineLearning(string $content, $default = 'unicode')
+    public static function fontDetect(string $content, $default = 'unicode')
     {
         $detector = new ZawgyiDetector();
         $score = $detector->getZawgyiProbability($content);

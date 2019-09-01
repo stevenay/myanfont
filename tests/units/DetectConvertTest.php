@@ -23,7 +23,7 @@ class DetectConvertTest extends TestCase
     {
          // check zawgyi return
         foreach ($this->sampleData['zawgyi'] as $key => $zawgyi) {
-            $this->assertSame('zawgyi', MyanFont::fontDetect($zawgyi), "Unexpected: " . $zawgyi);
+            $this->assertSame('zawgyi', MyanFont::fontDetectByRegularExpression($zawgyi), "Unexpected: " . $zawgyi);
         }
     }
 
@@ -32,7 +32,7 @@ class DetectConvertTest extends TestCase
     {
          // check unicode return
         foreach ($this->sampleData['unicode'] as $key => $unicode) {
-            $this->assertSame('unicode', MyanFont::fontDetect($unicode), "Unexpected: " . $unicode);
+            $this->assertSame('unicode', MyanFont::fontDetectByRegularExpression($unicode), "Unexpected: " . $unicode);
         }
     }
 
