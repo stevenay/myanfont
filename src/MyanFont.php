@@ -79,6 +79,13 @@ class MyanFont
      */
     public static function fontDetect(string $content, $default = 'unicode')
     {
+        $encoding = self::fontDetectByMachineLearning($content, $default);
+
+        return $encoding;
+    }
+
+    public static function fontDetectByMachineLearning(string $content, $default = 'unicode')
+    {
         $detector = new ZawgyiDetector();
         $score = $detector->getZawgyiProbability($content);
 
